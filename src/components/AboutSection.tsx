@@ -45,7 +45,7 @@ export const AboutSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 Hackmarathon is a national-level coding competition where talented 
                 developers, designers, and innovators come together to create solutions 
-                for pressing problems. Teams of 2 members collaborate intensively over 
+                for pressing problems. Teams of 2–4 members collaborate intensively over 
                 two days to build working prototypes and present them to a panel of 
                 expert judges.
               </p>

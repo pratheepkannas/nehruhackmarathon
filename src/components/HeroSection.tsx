@@ -140,7 +140,7 @@ export const HeroSection = () => {
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <Users className="w-5 h-5 text-primary" />
-            <span>2 Members per Team</span>
+            <span>2–4 Members per Team</span>
           </div>
         </motion.div>
 

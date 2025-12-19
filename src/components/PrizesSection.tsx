@@ -39,7 +39,7 @@ export const PrizesSection = () => {
                 </div>
                 
                 <div className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">
-                  ₹12,625
+                  ₹10,000
                 </div>
                 
                 <p className="text-muted-foreground">
@@ -79,7 +79,7 @@ export const PrizesSection = () => {
                 </div>
                 
                 <div className="text-5xl md:text-6xl font-display font-bold text-foreground mb-4">
-                  ₹2,000
+                  ₹5,000
                 </div>
                 
                 <p className="text-muted-foreground">
