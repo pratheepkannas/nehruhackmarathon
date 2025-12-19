@@ -1,7 +1,42 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Users } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const useCountdown = (targetDate: Date) => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const difference = targetDate.getTime() - new Date().getTime();
+      
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDate]);
+
+  return timeLeft;
+};
 
 export const HeroSection = () => {
+  // Set the hackathon start date - January 28, 2026
+  const hackathonDate = new Date("2026-01-28T09:00:00");
+  const { days, hours, minutes, seconds } = useCountdown(hackathonDate);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Animated Background */}
@@ -168,20 +203,20 @@ export const HeroSection = () => {
           </motion.a>
         </motion.div>
 
-        {/* Countdown Timer */}
+        {/* Live Countdown Timer */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
           className="mt-16 glass-card p-6 md:p-8 max-w-3xl mx-auto"
         >
-          <p className="text-sm text-muted-foreground mb-4">Registration Opens</p>
+          <p className="text-sm text-muted-foreground mb-4">Event Starts In</p>
           <div className="grid grid-cols-4 gap-4">
             {[
-              { value: "28", label: "Days" },
-              { value: "14", label: "Hours" },
-              { value: "32", label: "Minutes" },
-              { value: "18", label: "Seconds" },
+              { value: days, label: "Days" },
+              { value: hours, label: "Hours" },
+              { value: minutes, label: "Minutes" },
+              { value: seconds, label: "Seconds" },
             ].map((item, i) => (
               <motion.div
                 key={item.label}
@@ -190,9 +225,15 @@ export const HeroSection = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.2 + i * 0.1 }}
               >
-                <div className="text-3xl md:text-5xl font-display font-bold gradient-text">
-                  {item.value}
-                </div>
+                <motion.div 
+                  className="text-3xl md:text-5xl font-display font-bold gradient-text"
+                  key={item.value}
+                  initial={{ scale: 1.1 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {String(item.value).padStart(2, '0')}
+                </motion.div>
                 <div className="text-xs md:text-sm text-muted-foreground mt-1">
                   {item.label}
                 </div>
