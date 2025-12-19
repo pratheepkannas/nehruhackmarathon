@@ -4,21 +4,54 @@ import { Calendar, MapPin, Users } from "lucide-react";
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Animated Video Background */}
+      {/* Animated Background */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-city-11749-large.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 animated-bg" />
+        <div className="absolute inset-0 animated-grid opacity-30" />
+        {/* Animated floating orbs */}
+        <motion.div
+          className="absolute w-96 h-96 rounded-full bg-primary/30 blur-3xl"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{ top: "10%", left: "20%" }}
+        />
+        <motion.div
+          className="absolute w-80 h-80 rounded-full bg-secondary/25 blur-3xl"
+          animate={{
+            x: [0, -80, 0],
+            y: [0, 60, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{ bottom: "20%", right: "15%" }}
+        />
+        <motion.div
+          className="absolute w-64 h-64 rounded-full bg-primary/20 blur-3xl"
+          animate={{
+            x: [0, 60, 0],
+            y: [0, -40, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{ top: "50%", left: "60%" }}
+        />
+        <div className="absolute inset-0 bg-background/60" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
