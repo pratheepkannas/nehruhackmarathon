@@ -102,13 +102,15 @@ export const ProblemsSection = () => {
             <p className="text-muted-foreground mb-6">
               Get detailed information about all problem statements in our presentation
             </p>
-            <motion.button
-              className="px-8 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-primary-foreground font-display font-semibold hover:opacity-90 transition-all glow-effect"
+            <motion.a
+              href="/HACK_MARATHON.pptx"
+              download="HACK_MARATHON.pptx"
+              className="inline-block px-8 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-primary-foreground font-display font-semibold hover:opacity-90 transition-all glow-effect"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Download PPT
-            </motion.button>
+            </motion.a>
           </motion.div>
         </AnimatedSection>
       </div>
