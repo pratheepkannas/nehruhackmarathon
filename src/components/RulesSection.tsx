@@ -6,21 +6,21 @@ const rules = [
   {
     type: "allowed",
     icon: CheckCircle,
-    title: "Team Composition",
+    title: "Participation Guidelines",
     rules: [
-      "Teams must consist of exactly 2 members",
-      "All team members must be registered participants",
-      "Cross-institutional teams are allowed",
+      "Each team should have 2–4 members only",
+      "Only UG/PG students are allowed to participate",
+      "Selected students must bring their own college ID card",
     ],
   },
   {
     type: "allowed",
     icon: CheckCircle,
-    title: "Technical Requirements",
+    title: "Facilities Provided",
     rules: [
-      "Use any programming language or framework",
-      "Open source libraries and APIs are permitted",
-      "Cloud services can be utilized",
+      "Food and refreshments will be provided",
+      "Lab facilities and Wi-Fi network will be provided",
+      "One team member can register as Team Leader",
     ],
   },
   {
@@ -28,9 +28,9 @@ const rules = [
     icon: AlertCircle,
     title: "Important Guidelines",
     rules: [
+      "Bring all the required items and materials that you may need",
       "All code must be written during the hackathon",
       "Projects must address the chosen problem statement",
-      "Presentations are limited to 10 minutes",
     ],
   },
   {
@@ -38,19 +38,11 @@ const rules = [
     icon: XCircle,
     title: "Not Allowed",
     rules: [
+      "Participants should not be involved in any malpractice or misbehaviour",
       "Pre-written code or copied solutions",
       "Plagiarism or intellectual property theft",
-      "Unethical practices or harassment",
     ],
   },
-];
-
-const criteria = [
-  { name: "Innovation", weight: "30%" },
-  { name: "Technical Implementation", weight: "25%" },
-  { name: "Problem Relevance", weight: "20%" },
-  { name: "Presentation", weight: "15%" },
-  { name: "User Experience", weight: "10%" },
 ];
 
 export const RulesSection = () => {
@@ -101,7 +93,7 @@ export const RulesSection = () => {
         </StaggerContainer>
 
         {/* Team Section */}
-        <AnimatedSection className="mb-16">
+        <AnimatedSection>
           <div className="glass-card p-8 max-w-3xl mx-auto">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
@@ -111,12 +103,12 @@ export const RulesSection = () => {
                 <h3 className="text-xl font-display font-bold text-foreground">
                   Team Collaboration
                 </h3>
-                <p className="text-muted-foreground">2 Members per Team</p>
+                <p className="text-muted-foreground">2–4 Members per Team</p>
               </div>
             </div>
             <p className="text-muted-foreground mb-4">
-              Form a team of exactly 2 members to participate in the hackathon. 
-              Both members will work collaboratively on the same problem statement 
+              Form a team of 2–4 members to participate in the hackathon. 
+              All members will work collaboratively on the same problem statement 
               and share the responsibilities of coding, designing, and presenting.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -126,41 +118,6 @@ export const RulesSection = () => {
               <span className="px-3 py-1 rounded-full bg-secondary/20 text-secondary text-sm">
                 Communication is Key
               </span>
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Judging Criteria */}
-        <AnimatedSection>
-          <div className="glass-card p-8 max-w-3xl mx-auto">
-            <h3 className="text-xl font-display font-bold text-foreground mb-6 text-center">
-              Judging Criteria
-            </h3>
-            <div className="space-y-4">
-              {criteria.map((item, i) => (
-                <motion.div
-                  key={item.name}
-                  className="flex items-center gap-4"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-muted-foreground w-40">{item.name}</span>
-                  <div className="flex-1 h-3 rounded-full bg-muted overflow-hidden">
-                    <motion.div
-                      className="h-full bg-gradient-to-r from-primary to-secondary"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: item.weight }}
-                      transition={{ duration: 1, delay: i * 0.1 }}
-                      viewport={{ once: true }}
-                    />
-                  </div>
-                  <span className="text-primary font-display font-bold w-14 text-right">
-                    {item.weight}
-                  </span>
-                </motion.div>
-              ))}
             </div>
           </div>
         </AnimatedSection>

@@ -58,7 +58,7 @@ export const RegisterSection = () => {
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
                 <span>✓ Free Registration</span>
-                <span>✓ 2 Members per Team</span>
+                <span>✓ 2–4 Members per Team</span>
                 <span>✓ Amazing Prizes</span>
               </div>
             </div>
