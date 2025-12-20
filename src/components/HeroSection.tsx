@@ -133,7 +133,7 @@ export const HeroSection = () => {
               duration: 1.5,
               repeat: Infinity
             }}>
-                24Hr
+                24hr
               </motion.span>
             </div>
           </motion.div>
