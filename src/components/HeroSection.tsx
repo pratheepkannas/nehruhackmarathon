@@ -133,7 +133,7 @@ export const HeroSection = () => {
               duration: 1.5,
               repeat: Infinity
             }}>
-                24HR
+                24Hr
               </motion.span>
             </div>
           </motion.div>
@@ -173,7 +173,7 @@ export const HeroSection = () => {
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <Users className="w-5 h-5 text-primary" />
-            <span>2–4 Members per Team</span>
+            <span>2–3 Members per Team</span>
           </div>
         </motion.div>
 
