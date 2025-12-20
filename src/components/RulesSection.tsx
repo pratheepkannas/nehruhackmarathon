@@ -5,7 +5,7 @@ const rules = [{
   type: "allowed",
   icon: CheckCircle,
   title: "Participation Guidelines",
-  rules: ["Each team should have 2–4 members only", "Only UG/PG students are allowed to participate", "Selected students must bring their own college ID card"]
+  rules: ["Each team should have 2–3 members only", "Only UG/PG students are allowed to participate", "Selected students must bring their own college ID card"]
 }, {
   type: "allowed",
   icon: CheckCircle,
