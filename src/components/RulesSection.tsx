@@ -68,7 +68,7 @@ export const RulesSection = () => {
               </div>
             </div>
             <p className="text-muted-foreground mb-4">
-              Form a team of 2–4 members to participate in the hackathon. 
+              Form a team of 2–3 members to participate in the hackathon.
               All members will work collaboratively on the same problem statement 
               and share the responsibilities of coding, designing, and presenting.
             </p>
