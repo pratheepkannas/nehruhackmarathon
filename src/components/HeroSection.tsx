@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Users } from "lucide-react";
 import { useState, useEffect } from "react";
+import nascHeader from "@/assets/nasc-header.jpeg";
 const useCountdown = (targetDate: Date) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -81,6 +82,28 @@ export const HeroSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        {/* College Header Image */}
+        <motion.div 
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-8"
+        >
+          <motion.img 
+            src={nascHeader} 
+            alt="Nehru Arts and Science College - Moulding True Citizen"
+            className="max-w-full h-auto mx-auto md:max-h-24 lg:max-h-28 object-contain"
+            animate={{
+              filter: ["drop-shadow(0 0 20px hsl(var(--primary)/0.3))", "drop-shadow(0 0 40px hsl(var(--primary)/0.6))", "drop-shadow(0 0 20px hsl(var(--primary)/0.3))"]
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.div>
+
         {/* NASC - Main Hero Text */}
         <motion.div initial={{
         opacity: 0,
