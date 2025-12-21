@@ -4,12 +4,7 @@ import { AnimatedSection } from "./AnimatedSection";
 const sponsors = [
   { name: "TechCorp", tier: "Platinum" },
   { name: "InnovateLabs", tier: "Gold" },
-  { name: "CloudSphere", tier: "Gold" },
-  { name: "DataFlow", tier: "Silver" },
-  { name: "CodeMasters", tier: "Silver" },
-  { name: "DevStack", tier: "Bronze" },
-  { name: "ByteForge", tier: "Bronze" },
-  { name: "NetWave", tier: "Bronze" },
+  { name: "CloudSphere", tier: "Silver" },
 ];
 
 const SponsorCard = ({ name, tier }: { name: string; tier: string }) => {
