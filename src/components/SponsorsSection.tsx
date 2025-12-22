@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { AnimatedSection } from "./AnimatedSection";
 
 const sponsors = [
-  { name: "TechCorp", tier: "Platinum" },
-  { name: "InnovateLabs", tier: "Gold" },
-  { name: "CloudSphere", tier: "Silver" },
+  { name: "Nehru Colleges", tier: "Platinum" },
+  { name: "MetatronCube Software Solutions", tier: "Gold" },
+  { name: "Hacktivate Cyber Solutions Pvt.Ltd", tier: "Silver" },
 ];
 
 const SponsorCard = ({ name, tier }: { name: string; tier: string }) => {

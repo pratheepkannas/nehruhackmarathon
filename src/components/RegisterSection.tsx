@@ -39,7 +39,7 @@ export const RegisterSection = () => {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <motion.a 
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSd4uJC9YkDCPNbP_lcVwtPHt3Hx9zSHLHUThuhsYDA78IcPWw/viewform?usp=publish-editor"
+                  href="https://forms.gle/2tyXXexojdF9iufT7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-primary-foreground font-display font-bold text-lg flex items-center justify-center gap-2 glow-effect" 
