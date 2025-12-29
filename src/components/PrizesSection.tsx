@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { AnimatedSection, ScaleIn } from "./AnimatedSection";
-import { Award, Gift, Sparkles } from "lucide-react";
+import { Award, Gift, Sparkles, Trophy } from "lucide-react";
 
 export const PrizesSection = () => {
   return (
@@ -9,11 +9,11 @@ export const PrizesSection = () => {
         <AnimatedSection className="text-center mb-16">
           <h2 className="section-title mb-4">Prizes & Rewards</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Compete for amazing cash prizes and recognition
+            Compete for amazing prizes and recognition
           </p>
         </AnimatedSection>
 
-        {/* Main Prize Pool */}
+        {/* Main Prize Display */}
         <ScaleIn delay={0.1}>
           <motion.div
             className="relative glass-card p-12 text-center overflow-hidden group max-w-3xl mx-auto"
@@ -31,16 +31,12 @@ export const PrizesSection = () => {
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
                 <Sparkles className="w-8 h-8 text-amber-400" />
-                <Gift className="w-16 h-16 text-primary" />
+                <Trophy className="w-20 h-20 text-amber-500" />
                 <Sparkles className="w-8 h-8 text-amber-400" />
               </motion.div>
               
-              <div className="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-amber-500/20 to-primary/20 text-amber-400 text-lg font-medium mb-6">
-                🏆 Total Prize Pool
-              </div>
-              
               <motion.div 
-                className="text-6xl md:text-8xl font-display font-bold gradient-text mb-6"
+                className="text-5xl md:text-7xl font-display font-bold gradient-text mb-6"
                 animate={{ 
                   textShadow: [
                     "0 0 20px rgba(var(--primary-rgb), 0.5)",
@@ -50,29 +46,26 @@ export const PrizesSection = () => {
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                ₹15,000+
+                Attractive Prizes
               </motion.div>
               
-              <p className="text-xl text-muted-foreground mb-8">
-                Worth of Exciting Prizes
+              <p className="text-xl text-muted-foreground mb-4">
+                Exciting Rewards Await the Winners!
               </p>
 
-              <div className="flex flex-wrap justify-center gap-6 mt-8">
-                <motion.div 
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500/20 to-amber-600/20 border border-amber-500/30"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <span className="text-amber-400 font-bold text-2xl">₹10,000</span>
-                  <p className="text-amber-300/70 text-sm">Winner</p>
-                </motion.div>
-                
-                <motion.div 
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-slate-400/20 to-slate-500/20 border border-slate-400/30"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <span className="text-slate-300 font-bold text-2xl">₹5,000</span>
-                  <p className="text-slate-400/70 text-sm">Runner Up</p>
-                </motion.div>
+              <div className="flex flex-wrap justify-center gap-4 mt-8">
+                <div className="px-4 py-2 rounded-full bg-primary/20 text-primary border border-primary/30">
+                  <Gift className="w-5 h-5 inline mr-2" />
+                  Cash Prizes
+                </div>
+                <div className="px-4 py-2 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                  <Award className="w-5 h-5 inline mr-2" />
+                  Certificates
+                </div>
+                <div className="px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30">
+                  <Sparkles className="w-5 h-5 inline mr-2" />
+                  Recognition
+                </div>
               </div>
             </div>
           </motion.div>
