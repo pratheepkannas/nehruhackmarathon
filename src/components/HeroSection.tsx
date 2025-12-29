@@ -28,8 +28,8 @@ const useCountdown = (targetDate: Date) => {
   return timeLeft;
 };
 export const HeroSection = () => {
-  // Set the hackathon start date - January 28, 2026
-  const hackathonDate = new Date("2026-01-28T09:00:00");
+  // Set the hackathon start date - February 5, 2026
+  const hackathonDate = new Date("2026-02-05T09:00:00");
   const {
     days,
     hours,
@@ -188,7 +188,7 @@ export const HeroSection = () => {
       }} className="flex flex-wrap items-center justify-center gap-6 mb-10">
           <div className="flex items-center gap-2 text-muted-foreground">
             <Calendar className="w-5 h-5 text-primary" />
-            <span>28 - 29 Jan 2026</span>
+            <span>5 - 6 Feb 2026</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <MapPin className="w-5 h-5 text-secondary" />
