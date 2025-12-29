@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { AnimatedSection, ScaleIn } from "./AnimatedSection";
-import { Award, Trophy, Medal } from "lucide-react";
+import { Award, Gift, Sparkles } from "lucide-react";
 
 export const PrizesSection = () => {
   return (
@@ -13,88 +13,70 @@ export const PrizesSection = () => {
           </p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* First Prize */}
-          <ScaleIn delay={0.1}>
-            <motion.div
-              className="relative glass-card p-8 text-center overflow-hidden group"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              {/* Gradient border glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+        {/* Main Prize Pool */}
+        <ScaleIn delay={0.1}>
+          <motion.div
+            className="relative glass-card p-12 text-center overflow-hidden group max-w-3xl mx-auto"
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            {/* Animated background glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 opacity-50 group-hover:opacity-70 transition-opacity" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary-rgb),0.1),transparent_70%)]" />
+            
+            <div className="relative z-10">
+              <motion.div
+                className="flex items-center justify-center gap-4 mb-8"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Sparkles className="w-8 h-8 text-amber-400" />
+                <Gift className="w-16 h-16 text-primary" />
+                <Sparkles className="w-8 h-8 text-amber-400" />
+              </motion.div>
               
-              <div className="relative z-10">
-                <motion.div
-                  className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center mb-6 shadow-lg"
-                  animate={{ rotateY: [0, 360] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  style={{ transformStyle: "preserve-3d" }}
-                >
-                  <Trophy className="w-12 h-12 text-amber-900" />
-                </motion.div>
-                
-                <div className="inline-block px-4 py-1 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium mb-4">
-                  🥇 First Place
-                </div>
-                
-                <div className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">
-                  ₹10,000
-                </div>
-                
-                <p className="text-muted-foreground">
-                  Grand Prize Winner
-                </p>
-                
-                <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-                  <li>✓ Cash Prize</li>
-                  <li>✓ Winner Certificate</li>
-                  <li>✓ Special Recognition</li>
-                </ul>
+              <div className="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-amber-500/20 to-primary/20 text-amber-400 text-lg font-medium mb-6">
+                🏆 Total Prize Pool
               </div>
-            </motion.div>
-          </ScaleIn>
+              
+              <motion.div 
+                className="text-6xl md:text-8xl font-display font-bold gradient-text mb-6"
+                animate={{ 
+                  textShadow: [
+                    "0 0 20px rgba(var(--primary-rgb), 0.5)",
+                    "0 0 40px rgba(var(--primary-rgb), 0.8)",
+                    "0 0 20px rgba(var(--primary-rgb), 0.5)"
+                  ]
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                ₹15,000+
+              </motion.div>
+              
+              <p className="text-xl text-muted-foreground mb-8">
+                Worth of Exciting Prizes
+              </p>
 
-          {/* Second Prize */}
-          <ScaleIn delay={0.2}>
-            <motion.div
-              className="relative glass-card p-8 text-center overflow-hidden group"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              
-              <div className="relative z-10">
-                <motion.div
-                  className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-slate-300 to-slate-500 flex items-center justify-center mb-6 shadow-lg"
-                  animate={{ rotateY: [0, 360] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                  style={{ transformStyle: "preserve-3d" }}
+              <div className="flex flex-wrap justify-center gap-6 mt-8">
+                <motion.div 
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500/20 to-amber-600/20 border border-amber-500/30"
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <Medal className="w-12 h-12 text-slate-700" />
+                  <span className="text-amber-400 font-bold text-2xl">₹10,000</span>
+                  <p className="text-amber-300/70 text-sm">Winner</p>
                 </motion.div>
                 
-                <div className="inline-block px-4 py-1 rounded-full bg-slate-400/20 text-slate-300 text-sm font-medium mb-4">
-                  🥈 Second Place
-                </div>
-                
-                <div className="text-5xl md:text-6xl font-display font-bold text-foreground mb-4">
-                  ₹5,000
-                </div>
-                
-                <p className="text-muted-foreground">
-                  Runner Up
-                </p>
-                
-                <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-                  <li>✓ Cash Prize</li>
-                  <li>✓ Merit Certificate</li>
-                  <li>✓ Recognition</li>
-                </ul>
+                <motion.div 
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-slate-400/20 to-slate-500/20 border border-slate-400/30"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span className="text-slate-300 font-bold text-2xl">₹5,000</span>
+                  <p className="text-slate-400/70 text-sm">Runner Up</p>
+                </motion.div>
               </div>
-            </motion.div>
-          </ScaleIn>
-        </div>
+            </div>
+          </motion.div>
+        </ScaleIn>
 
         {/* Additional perks */}
         <AnimatedSection delay={0.3} className="mt-12">
