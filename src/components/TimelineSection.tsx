@@ -5,7 +5,7 @@ import { Calendar, CheckCircle, FileText, Trophy } from "lucide-react";
 const timeline = [
   {
     date: "20 Jan 2026",
-    title: "Registration Opens",
+    title: "Registration Closes",
     description: "Submit your team details and start preparing for the challenge",
     icon: Calendar,
     status: "upcoming",
