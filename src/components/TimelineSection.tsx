@@ -11,7 +11,7 @@ const timeline = [
     status: "upcoming",
   },
   {
-    date: "28 Jan 2026",
+    date: "26 Jan 2026",
     title: "Shortlist Announcement",
     description: "Selected teams will be notified and invited to the final round",
     icon: FileText,
