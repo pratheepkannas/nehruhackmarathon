@@ -4,28 +4,28 @@ import { Calendar, CheckCircle, FileText, Trophy } from "lucide-react";
 
 const timeline = [
   {
-    date: "16 Jan 2026",
+    date: "20 Jan 2026",
     title: "Registration Opens",
     description: "Submit your team details and start preparing for the challenge",
     icon: Calendar,
     status: "upcoming",
   },
   {
-    date: "20 Jan 2026",
+    date: "28 Jan 2026",
     title: "Shortlist Announcement",
     description: "Selected teams will be notified and invited to the final round",
     icon: FileText,
     status: "upcoming",
   },
   {
-    date: "28 Jan 2026",
+    date: "5 Feb 2026",
     title: "Finals Day 1",
     description: "Hackathon begins! Start building your innovative solutions",
     icon: CheckCircle,
     status: "upcoming",
   },
   {
-    date: "29 Jan 2026",
+    date: "6 Feb 2026",
     title: "Finals Day 2 & Results",
     description: "Project presentations and winner announcements",
     icon: Trophy,
