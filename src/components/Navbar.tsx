@@ -48,7 +48,9 @@ export const Navbar = () => {
               </motion.a>
             ))}
             <motion.a
-              href="#register"
+              href="https://forms.gle/2tyXXexojdF9iufT7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity animate-pulse-glow"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -85,7 +87,9 @@ export const Navbar = () => {
               </a>
             ))}
             <a
-              href="#register"
+              href="https://forms.gle/2tyXXexojdF9iufT7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block mt-4 px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-center text-primary-foreground font-semibold"
               onClick={() => setIsOpen(false)}
             >
