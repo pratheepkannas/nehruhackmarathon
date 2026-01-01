@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./AnimatedSection";
 import { AlertCircle, CheckCircle, XCircle, Users } from "lucide-react";
+
 const rules = [{
   type: "allowed",
   icon: CheckCircle,
@@ -15,15 +16,17 @@ const rules = [{
   type: "warning",
   icon: AlertCircle,
   title: "Important Guidelines",
-  rules: ["Bring all the required items and materials that you may need", "All code must be written during the hackathon", "Projects must address the chosen problem statement"]
+  rules: ["Valid college ID card is mandatory for entry", "Bring all the required items and materials that you may need", "All code must be written during the hackathon", "Projects must address the chosen problem statement"]
 }, {
   type: "restricted",
   icon: XCircle,
   title: "Not Allowed",
   rules: ["Participants should not be involved in any malpractice or misbehaviour", "Pre-written code or copied solutions", "Plagiarism or intellectual property theft"]
 }];
+
 export const RulesSection = () => {
-  return <section id="rules" className="py-24 px-4 relative">
+  return (
+    <section id="rules" className="py-24 px-4 relative">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-16">
           <h2 className="section-title mb-4">Rules & Guidelines</h2>
@@ -33,10 +36,9 @@ export const RulesSection = () => {
         </AnimatedSection>
 
         <StaggerContainer className="grid md:grid-cols-2 gap-6 mb-16">
-          {rules.map(section => <StaggerItem key={section.title}>
-              <motion.div className="glass-card p-6 h-full" whileHover={{
-            scale: 1.02
-          }}>
+          {rules.map(section => (
+            <StaggerItem key={section.title}>
+              <motion.div className="glass-card p-6 h-full" whileHover={{ scale: 1.02 }}>
                 <div className="flex items-center gap-3 mb-4">
                   <section.icon className={`w-6 h-6 ${section.type === 'allowed' ? 'text-emerald-500' : section.type === 'warning' ? 'text-amber-500' : 'text-rose-500'}`} />
                   <h3 className="font-display font-bold text-lg text-foreground">
@@ -44,13 +46,16 @@ export const RulesSection = () => {
                   </h3>
                 </div>
                 <ul className="space-y-3">
-                  {section.rules.map((rule, i) => <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
+                  {section.rules.map((rule, i) => (
+                    <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <span className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${section.type === 'allowed' ? 'bg-emerald-500' : section.type === 'warning' ? 'bg-amber-500' : 'bg-rose-500'}`} />
                       {rule}
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </motion.div>
-            </StaggerItem>)}
+            </StaggerItem>
+          ))}
         </StaggerContainer>
 
         {/* Team Section */}
@@ -83,5 +88,6 @@ export const RulesSection = () => {
           </div>
         </AnimatedSection>
       </div>
-    </section>;
+    </section>
+  );
 };
