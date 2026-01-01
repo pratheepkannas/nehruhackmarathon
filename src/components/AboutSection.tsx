@@ -7,7 +7,7 @@ const features = [{
 }, {
   icon: Code,
   title: "Build",
-  description: "48 hours of intense coding and problem-solving"
+  description: "24 hours of intense coding and problem-solving"
 }, {
   icon: Rocket,
   title: "Launch",
