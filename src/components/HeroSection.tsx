@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Users } from "lucide-react";
+import { Calendar, Users, Slack } from "lucide-react";
 import { useState, useEffect } from "react";
 import nascHeader from "@/assets/nasc-header.jpeg";
 const useCountdown = (targetDate: Date) => {
@@ -83,25 +83,23 @@ export const HeroSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
         {/* College Header Image */}
-        <motion.div 
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8"
-        >
-          <motion.img 
-            src={nascHeader} 
-            alt="Nehru Arts and Science College - Moulding True Citizen"
-            className="max-w-full h-auto mx-auto md:max-h-24 lg:max-h-28 object-contain"
-            animate={{
-              filter: ["drop-shadow(0 0 20px hsl(var(--primary)/0.3))", "drop-shadow(0 0 40px hsl(var(--primary)/0.6))", "drop-shadow(0 0 20px hsl(var(--primary)/0.3))"]
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
+        <motion.div initial={{
+        opacity: 0,
+        y: -30
+      }} animate={{
+        opacity: 1,
+        y: 0
+      }} transition={{
+        duration: 0.8,
+        ease: "easeOut"
+      }} className="mb-8">
+          <motion.img src={nascHeader} alt="Nehru Arts and Science College - Moulding True Citizen" className="max-w-full h-auto mx-auto md:max-h-24 lg:max-h-28 object-contain" animate={{
+          filter: ["drop-shadow(0 0 20px hsl(var(--primary)/0.3))", "drop-shadow(0 0 40px hsl(var(--primary)/0.6))", "drop-shadow(0 0 20px hsl(var(--primary)/0.3))"]
+        }} transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }} />
         </motion.div>
 
         {/* NASC - Main Hero Text */}
@@ -191,7 +189,7 @@ export const HeroSection = () => {
             <span>5 - 6 Feb 2026</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
-            <MapPin className="w-5 h-5 text-secondary" />
+            <Slack className="w-5 h-5 text-secondary" />
             <span>National Event</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
