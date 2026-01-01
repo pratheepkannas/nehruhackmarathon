@@ -27,6 +27,24 @@ const coordinators = [
     email: "sneha.patel@college.edu",
     phone: "+91 98765 43213",
   },
+  {
+    name: "Vikram Singh",
+    role: "Logistics Coordinator",
+    email: "vikram.singh@college.edu",
+    phone: "+91 98765 43214",
+  },
+  {
+    name: "Ananya Reddy",
+    role: "Marketing Lead",
+    email: "ananya.reddy@college.edu",
+    phone: "+91 98765 43215",
+  },
+  {
+    name: "Karthik Nair",
+    role: "Volunteer Coordinator",
+    email: "karthik.nair@college.edu",
+    phone: "+91 98765 43216",
+  },
 ];
 
 export const CoordinatorsSection = () => {
