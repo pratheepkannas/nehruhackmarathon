@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -12,91 +10,54 @@ const navLinks = [
 ];
 
 export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 px-4 py-4"
+      transition={{ duration: 0.4 }}
+      className="fixed top-0 left-0 right-0 z-50 px-3 md:px-4 py-3 md:py-4"
     >
-      <div className="max-w-7xl mx-auto glass-card px-6 py-3">
+      <div className="max-w-7xl mx-auto glass-card px-4 md:px-6 py-2 md:py-3">
         <div className="flex items-center justify-between">
-          <motion.a
+          <a
             href="#"
-            className="text-xl font-display font-bold gradient-text"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="text-lg md:text-xl font-display font-bold gradient-text active:scale-95 transition-transform touch-manipulation"
           >
             HACKMARATHON
-          </motion.a>
+          </a>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav - hidden on mobile since we have bottom nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link, i) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-              >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300" />
-              </motion.a>
-            ))}
-            <motion.a
-              href="https://forms.gle/2tyXXexojdF9iufT7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity animate-pulse-glow"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Register Now
-            </motion.a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Nav */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 pt-4 border-t border-border"
-          >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="block py-2 text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsOpen(false)}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300" />
               </a>
             ))}
             <a
               href="https://forms.gle/2tyXXexojdF9iufT7"
               target="_blank"
               rel="noopener noreferrer"
-              className="block mt-4 px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-center text-primary-foreground font-semibold"
-              onClick={() => setIsOpen(false)}
+              className="px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity animate-pulse-glow"
             >
               Register Now
             </a>
-          </motion.div>
-        )}
+          </div>
+
+          {/* Mobile Register Button */}
+          <a
+            href="https://forms.gle/2tyXXexojdF9iufT7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold text-sm active:scale-95 transition-transform touch-manipulation"
+          >
+            Register
+          </a>
+        </div>
       </div>
     </motion.nav>
   );
