@@ -6,7 +6,7 @@ const rules = [{
   type: "allowed",
   icon: CheckCircle,
   title: "Participation Guidelines",
-  rules: ["Each team should have 2–3 members only", "Only UG/PG students are allowed to participate", "Selected students must bring their own college ID card"]
+  rules: ["Each team should have 2–4 members only", "Only UG/PG students are allowed to participate", "Selected students must bring their own college ID card"]
 }, {
   type: "allowed",
   icon: CheckCircle,
@@ -69,11 +69,11 @@ export const RulesSection = () => {
                 <h3 className="text-xl font-display font-bold text-foreground">
                   Team Collaboration
                 </h3>
-                <p className="text-muted-foreground">2–3 Members per Team</p>
+                <p className="text-muted-foreground">2–4 Members per Team</p>
               </div>
             </div>
             <p className="text-muted-foreground mb-4">
-              Form a team of 2–3 members to participate in the hackathon.
+              Form a team of 2–4 members to participate in the hackathon.
               All members will work collaboratively on the same problem statement 
               and share the responsibilities of coding, designing, and presenting.
             </p>
