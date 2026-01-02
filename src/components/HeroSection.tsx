@@ -82,11 +82,14 @@ export const HeroSection = () => {
             <span className="text-foreground">HACKMARATHON</span>
           </h2>
           
-          {/* 24HR Badge - simplified animation */}
+          {/* 24HR Offline Badge - simplified animation */}
           <div className="relative animate-pulse-glow rounded-2xl">
-            <div className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-primary to-secondary rounded-2xl border-2 border-white/20">
+            <div className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-primary to-secondary rounded-2xl border-2 border-white/20 flex flex-col items-center">
               <span className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-display font-black text-white">
                 24hr
+              </span>
+              <span className="text-xs sm:text-sm md:text-base font-display font-semibold text-white/90 uppercase tracking-wider">
+                Offline
               </span>
             </div>
           </div>
