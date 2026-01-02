@@ -88,7 +88,7 @@ export const HeroSection = () => {
               <span className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-display font-black text-white">
                 24hr
               </span>
-              <span className="text-xs sm:text-sm md:text-base font-display font-semibold text-white/90 uppercase tracking-wider">
+              <span className="text-sm sm:text-base md:text-xl font-display font-bold text-white uppercase tracking-wider">
                 Offline
               </span>
             </div>
