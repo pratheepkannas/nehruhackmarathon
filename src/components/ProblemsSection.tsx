@@ -36,11 +36,17 @@ Users share sensitive credentials and documents (ID proofs, OTPs, certificates, 
   },
   {
     id: 2,
-    title: "Sustainable Environment",
-    description: "Create technology-driven solutions to address environmental challenges and promote sustainability.",
+    title: "Natural Language Processing",
+    description: "Create technology driven solutions to address conversations and automatically identify the emotions expressed by user.",
     icon: Leaf,
     color: "from-emerald-500 to-teal-600",
-    detailedContent: null,
+    detailedContent: `**Problem Statement 2: Emotion Detection from Text in Online Conversations**
+
+**Problem:** Most online conversations like chat messages, feedback, and support chats are text-based and do not clearly show the user's emotions. Because of this, systems cannot understand whether a user is stressed, angry, sad, or happy. This leads to poor responses, delayed support, and missed early signs of emotional distress. There is also a lack of emotion-based text data for improving future systems.
+
+**Goal:** To build a system that can analyze text messages and automatically identify the user's emotions such as happiness, sadness, anger, stress, or urgency.
+
+**Expected Outcome:** Emotion-aware text analysis helps systems understand user emotions, provide faster and better responses, detect stress early, and generate useful emotion-labeled data for future improvements.`,
   },
   {
     id: 3,
