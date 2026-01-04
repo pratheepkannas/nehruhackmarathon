@@ -1,14 +1,38 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./AnimatedSection";
-import { Brain, Globe, Leaf, Shield } from "lucide-react";
+import { Globe, Leaf, Shield, Lock } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const problemStatements = [
   {
     id: 1,
-    title: "Smart Healthcare Solutions",
+    title: "Cybersecurity & Privacy",
     description: "Develop innovative solutions to improve healthcare accessibility and patient care using AI and IoT technologies.",
-    icon: Brain,
+    icon: Lock,
     color: "from-rose-500 to-pink-600",
+    detailedContent: `**Problem Statement 1 — Digital Fraud Evidence Capture & Future Threat Database Gap**
+
+Scams, phishing attacks, fraudulent links, fake calls, and digital deception are increasing, but there is no software that enables instant incident reporting, evidence capture, attack classification, origin tagging, and long-term threat database creation for future prevention.
+
+**Goal:** Build an app/web that logs incidents and stores evidence securely.
+
+**Expected Outcome:** A future-usable cyber fraud threat index with evidence repository and classification.
+
+---
+
+**Problem Statement 2 — Personal Credential Sharing & Misuse-Risk Confidence Gap**
+
+Users share sensitive credentials and documents (ID proofs, OTPs, certificates, banking docs) through insecure channels, and lack a software system that provides encrypted sharing, access permission logs, expiry-based access, and a measurable misuse-risk confidence score for future safety decisions.
+
+**Goal:** Build a software system for secure credential vault + controlled sharing + access tracking.
+
+**Expected Outcome:** Safer credential exchange, permission history logs, and a measurable misuse-risk confidence model for future protection.`,
   },
   {
     id: 2,
@@ -16,6 +40,7 @@ const problemStatements = [
     description: "Create technology-driven solutions to address environmental challenges and promote sustainability.",
     icon: Leaf,
     color: "from-emerald-500 to-teal-600",
+    detailedContent: null,
   },
   {
     id: 3,
@@ -23,6 +48,7 @@ const problemStatements = [
     description: "Build secure systems to protect user data and enhance cybersecurity in the digital age.",
     icon: Shield,
     color: "from-blue-500 to-indigo-600",
+    detailedContent: null,
   },
   {
     id: 4,
@@ -30,10 +56,13 @@ const problemStatements = [
     description: "Design solutions that improve urban living through smart transportation, energy management, and connectivity.",
     icon: Globe,
     color: "from-amber-500 to-orange-600",
+    detailedContent: null,
   },
 ];
 
 export const ProblemsSection = () => {
+  const [selectedProblem, setSelectedProblem] = useState<typeof problemStatements[0] | null>(null);
+
   return (
     <section id="problems" className="py-24 px-4 relative">
       <div className="max-w-7xl mx-auto">
@@ -77,12 +106,22 @@ export const ProblemsSection = () => {
                     <span className="text-xs text-muted-foreground">
                       Open for all participants
                     </span>
-                    <motion.span 
-                      className="text-primary text-sm font-medium"
-                      whileHover={{ x: 5 }}
-                    >
-                      Learn more →
-                    </motion.span>
+                    {problem.detailedContent ? (
+                      <motion.button 
+                        className="text-primary text-sm font-medium"
+                        whileHover={{ x: 5 }}
+                        onClick={() => setSelectedProblem(problem)}
+                      >
+                        View more →
+                      </motion.button>
+                    ) : (
+                      <motion.span 
+                        className="text-primary text-sm font-medium"
+                        whileHover={{ x: 5 }}
+                      >
+                        View more →
+                      </motion.span>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -120,6 +159,47 @@ export const ProblemsSection = () => {
           </motion.div>
         </AnimatedSection>
       </div>
+
+      {/* Detail Dialog */}
+      <Dialog open={!!selectedProblem} onOpenChange={() => setSelectedProblem(null)}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-display flex items-center gap-3">
+              {selectedProblem && (
+                <>
+                  <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${selectedProblem.color} flex items-center justify-center`}>
+                    <selectedProblem.icon className="w-5 h-5 text-white" />
+                  </div>
+                  {selectedProblem.title}
+                </>
+              )}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="prose prose-sm dark:prose-invert max-w-none mt-4">
+            {selectedProblem?.detailedContent?.split('\n').map((line, i) => {
+              if (line.startsWith('**') && line.endsWith('**')) {
+                return <h4 key={i} className="font-bold text-foreground mt-4 mb-2">{line.replace(/\*\*/g, '')}</h4>;
+              }
+              if (line.startsWith('---')) {
+                return <hr key={i} className="my-6 border-border" />;
+              }
+              if (line.startsWith('**Goal:**') || line.startsWith('**Expected Outcome:**')) {
+                const [label, ...rest] = line.split(':');
+                return (
+                  <p key={i} className="text-muted-foreground mb-2">
+                    <strong className="text-foreground">{label.replace(/\*\*/g, '')}:</strong>
+                    {rest.join(':')}
+                  </p>
+                );
+              }
+              if (line.trim()) {
+                return <p key={i} className="text-muted-foreground mb-3">{line}</p>;
+              }
+              return null;
+            })}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
