@@ -11,6 +11,10 @@ const management = [
     name: "Dr. Sunita Sharma",
     profession: "Vice Principal",
   },
+  {
+    name: "Dr. Amit Gupta",
+    profession: "Dean of Academics",
+  },
 ];
 
 const conveners = [
