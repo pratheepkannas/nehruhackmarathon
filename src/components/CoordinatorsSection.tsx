@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./AnimatedSection";
 import { Mail, Phone } from "lucide-react";
+import principalImage from "@/assets/principal.png";
 
 const management = [
   {
     name: "Dr. Rajesh Kumar",
     profession: "Principal",
+    image: principalImage,
   },
   {
     name: "Dr. Sunita Sharma",
@@ -99,10 +101,18 @@ export const CoordinatorsSection = () => {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                    <span className="text-3xl font-display font-bold gradient-text">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                  <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden">
+                    {member.image ? (
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-3xl font-display font-bold gradient-text">
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    )}
                   </div>
                 </motion.div>
                 <h3 className="font-display font-bold text-lg text-foreground mb-1">
