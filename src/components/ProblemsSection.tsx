@@ -60,11 +60,27 @@ Users share sensitive credentials and documents (ID proofs, OTPs, certificates, 
   },
   {
     id: 3,
-    title: "Digital Security & Privacy",
-    description: "Build secure systems to protect user data and enhance cybersecurity in the digital age.",
+    title: "FinTech & Digital Economy",
+    description: "Build solutions to improve financial awareness, digital inclusion, and fair market practices.",
     icon: Shield,
     color: "from-blue-500 to-indigo-600",
-    detailedContent: null,
+    detailedContent: `**Problem Statement 1: Financial Awareness and Digital Inclusion Platform**
+
+**Problem:** In India, many citizens—especially in remote regions—lack financial awareness about credit, savings, and digital benefits, leading to loan rejection, poor planning, and dependency on intermediaries. A software solution is needed to improve financial decision clarity and inclusion.
+
+**Goal:** Build a web/mobile platform that guides users in credit, savings, or digital finance planning.
+
+**Expected Outcome:** Improved financial awareness, better loan/savings planning, reduced dependency on middlemen.
+
+---
+
+**Problem Statement 2: Local Market Price Volatility & Fair Value Negotiation Gap**
+
+**Problem:** Sellers and producers face daily price changes and unfair value decisions because they lack a system to compare markets, evaluate quality-based pricing, and get a reasonable price range with negotiation support, leading to financial loss or undervalued sales. No decision-support pricing intelligence tool exists in software.
+
+**Goal:** Build a software platform (app/web) that provides fair-value price range, comparison, and negotiation assistance.
+
+**Expected Outcome:** Better selling decisions, reduced undervaluation, smarter price awareness, improved negotiation confidence.`,
   },
   {
     id: 4,
@@ -72,7 +88,23 @@ Users share sensitive credentials and documents (ID proofs, OTPs, certificates, 
     description: "Develop innovative solutions to improve healthcare accessibility and patient care using AI and IoT technologies.",
     icon: Globe,
     color: "from-amber-500 to-orange-600",
-    detailedContent: null,
+    detailedContent: `**Problem Statement 1: Emergency Response & Hospital Readiness Coordination**
+
+**Problem:** During sudden medical emergencies, people struggle to identify nearby hospital readiness (bed/doctor availability), optimal arrival time, and fast pre-registration for immediate care, causing critical delays. There is no software system that enables real-time emergency coordination and hospital readiness visibility.
+
+**Goal:** To develop a digital platform that provides real-time information on nearby hospital readiness, including bed and doctor availability, estimated arrival time, and quick pre-registration, enabling faster and more coordinated emergency medical response.
+
+**Expected Outcome:** The system will reduce delays in emergency care by providing real-time hospital readiness information, enabling faster arrival decisions, quick pre-registration, and improved coordination between patients, ambulances, and hospitals, ultimately increasing the chances of timely and effective treatment.
+
+---
+
+**Problem Statement 2: Crowd-Aware Blood Donation & Availability Coordination**
+
+**Problem:** Blood banks and donation drives suffer from unpredictable donor turnout, mismatched blood availability, and poor visibility into upcoming shortages, causing emergency dependency on unplanned donors. A software system is needed for donor scheduling, blood availability visibility, and shortage-aware coordination.
+
+**Goal:** To build a digital system that manages blood donor scheduling, tracks real-time blood availability, and predicts potential shortages to ensure timely and well-coordinated blood donation and distribution.
+
+**Expected Outcome:** The system will improve blood availability planning by providing clear visibility into donor turnout and blood stock levels, reducing emergency shortages and dependency on unplanned donors. It will enable better coordination between blood banks, donors, and hospitals, ensuring timely access to required blood types and saving more lives.`,
   },
 ];
 
