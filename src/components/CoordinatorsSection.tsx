@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./AnimatedSection";
 import { Mail, Phone } from "lucide-react";
 import principalImage from "@/assets/principal.png";
+import vicePrincipalImage from "@/assets/vice-principal.png";
 
 const management = [
   {
@@ -12,6 +13,7 @@ const management = [
   {
     name: "Dr. Sunita Sharma",
     profession: "Vice Principal",
+    image: vicePrincipalImage,
   },
   {
     name: "Dr. Amit Gupta",
