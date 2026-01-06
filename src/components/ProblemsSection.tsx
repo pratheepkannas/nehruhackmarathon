@@ -144,7 +144,7 @@ export const ProblemsSection = () => {
                       <h3 className="text-xl font-display font-bold text-foreground mt-1 mb-3 group-hover:text-primary transition-colors">
                         {problem.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
+                      <p className="text-muted-foreground text-sm leading-relaxed text-justify">
                         {problem.description}
                       </p>
                     </div>

@@ -34,8 +34,8 @@ export const AboutSection = () => {
               <h3 className="text-2xl font-display font-bold text-foreground mb-4">
                 What is Hackmarathon?
               </h3>
-              <p className="text-muted-foreground leading-relaxed">Hackmarathon is a national-level coding competition where talented developers, designers, and innovators come together to create solutions for pressing problems. Teams of 2–4 members collaborate intensively over 24hr to build working prototypes and present them to a panel of expert judges.</p>
-              <p className="text-muted-foreground leading-relaxed mt-4">
+              <p className="text-muted-foreground leading-relaxed text-justify">Hackmarathon is a national-level coding competition where talented developers, designers, and innovators come together to create solutions for pressing problems. Teams of 2–4 members collaborate intensively over 24hr to build working prototypes and present them to a panel of expert judges.</p>
+              <p className="text-muted-foreground leading-relaxed text-justify mt-4">
                 Whether you're a seasoned developer or a passionate beginner, this 
                 hackathon provides the perfect platform to showcase your skills, 
                 learn from peers, and potentially win exciting prizes.
