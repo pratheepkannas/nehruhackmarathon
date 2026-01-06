@@ -7,6 +7,7 @@ import convener1Image from "@/assets/convener-1.png";
 import convener2Image from "@/assets/convener-2.png";
 import faculty1Image from "@/assets/faculty-1.png";
 import faculty2Image from "@/assets/faculty-2.png";
+import deanImage from "@/assets/dean.png";
 
 const management = [
   {
@@ -22,6 +23,7 @@ const management = [
   {
     name: "Dr. Amit Gupta",
     profession: "Dean of Academics",
+    image: deanImage,
   },
 ];
 
