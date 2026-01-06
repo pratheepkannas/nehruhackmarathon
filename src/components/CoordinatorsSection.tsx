@@ -5,6 +5,8 @@ import principalImage from "@/assets/principal.png";
 import vicePrincipalImage from "@/assets/vice-principal.png";
 import convener1Image from "@/assets/convener-1.png";
 import convener2Image from "@/assets/convener-2.png";
+import faculty1Image from "@/assets/faculty-1.png";
+import faculty2Image from "@/assets/faculty-2.png";
 
 const management = [
   {
@@ -46,12 +48,14 @@ const facultyCoordinators = [
     profession: "Assistant Professor - CSE",
     email: "vikram.singh@college.edu",
     phone: "+91 98765 43212",
+    image: faculty1Image,
   },
   {
     name: "Prof. Anita Reddy",
     profession: "Assistant Professor - IT",
     email: "anita.reddy@college.edu",
     phone: "+91 98765 43213",
+    image: faculty2Image,
   },
 ];
 
@@ -211,10 +215,18 @@ export const CoordinatorsSection = () => {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                    <span className="text-3xl font-display font-bold gradient-text">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                  <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden">
+                    {member.image ? (
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-3xl font-display font-bold gradient-text">
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    )}
                   </div>
                 </motion.div>
                 <h3 className="font-display font-bold text-lg text-foreground mb-1">
