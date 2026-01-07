@@ -11,18 +11,18 @@ import deanImage from "@/assets/dean.png";
 
 const management = [
   {
-    name: "Dr. Rajesh Kumar",
+    name: "Dr. P. Krishna Kumar",
     profession: "CEO & Secretary",
     image: principalImage,
   },
   {
-    name: "Dr. Sunita Sharma",
-    profession: "Vice Principal",
+    name: "Dr. H. N. Nagaraja",
+    profession: "Executive Director",
     image: vicePrincipalImage,
   },
   {
-    name: "Dr. Amit Gupta",
-    profession: "Dean of Academics",
+    name: "Dr. V. Vijayakumar",
+    profession: "Principal",
     image: deanImage,
   },
 ];
