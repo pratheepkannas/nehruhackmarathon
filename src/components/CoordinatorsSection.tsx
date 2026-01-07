@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./AnimatedSection";
 import { Mail, Phone } from "lucide-react";
+import chairmanImage from "@/assets/chairman.png";
 import principalImage from "@/assets/principal.png";
 import vicePrincipalImage from "@/assets/vice-principal.png";
 import convener1Image from "@/assets/convener-1.png";
@@ -10,6 +11,11 @@ import faculty2Image from "@/assets/faculty-2.png";
 import deanImage from "@/assets/dean.png";
 
 const management = [
+  {
+    name: "Sri. M.G. Jayaram",
+    profession: "Chairman",
+    image: chairmanImage,
+  },
   {
     name: "Dr. P. Krishna Kumar",
     profession: "CEO & Secretary",
@@ -39,6 +45,18 @@ const conveners = [
     profession: "Head of Department - Computer Applications",
     phone: "+91 98765 43211",
     image: convener2Image,
+  },
+  {
+    name: "Convener 3",
+    profession: "Department",
+    phone: "+91 00000 00000",
+    image: null,
+  },
+  {
+    name: "Convener 4",
+    profession: "Department",
+    phone: "+91 00000 00000",
+    image: null,
   },
 ];
 
@@ -92,7 +110,7 @@ export const CoordinatorsSection = () => {
           </p>
         </AnimatedSection>
 
-        <StaggerContainer className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-16">
+        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
           {management.map((member) => (
             <StaggerItem key={member.name}>
               <motion.div
@@ -136,7 +154,7 @@ export const CoordinatorsSection = () => {
           </p>
         </AnimatedSection>
 
-        <StaggerContainer className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16">
+        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
           {conveners.map((member) => (
             <StaggerItem key={member.name}>
               <motion.div
