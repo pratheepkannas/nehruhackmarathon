@@ -6,6 +6,8 @@ import principalImage from "@/assets/principal.png";
 import vicePrincipalImage from "@/assets/vice-principal.png";
 import convener1Image from "@/assets/convener-1.png";
 import convener2Image from "@/assets/convener-2.png";
+import convener3Image from "@/assets/convener-3.png";
+import convener4Image from "@/assets/convener-4.png";
 import faculty1Image from "@/assets/faculty-1.png";
 import faculty2Image from "@/assets/faculty-2.png";
 import deanImage from "@/assets/dean.png";
@@ -50,13 +52,13 @@ const conveners = [
     name: "Convener 3",
     profession: "Department",
     phone: "+91 00000 00000",
-    image: null,
+    image: convener3Image,
   },
   {
     name: "Convener 4",
     profession: "Department",
     phone: "+91 00000 00000",
-    image: null,
+    image: convener4Image,
   },
 ];
 
