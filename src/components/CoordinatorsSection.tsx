@@ -29,16 +29,14 @@ const management = [
 
 const conveners = [
   {
-    name: "Dr. Arun Kumar",
-    profession: "Head of Department - CSE",
-    email: "arun.kumar@college.edu",
+    name: "Dr. S. Saraswathi",
+    profession: "Head of Department - Computer Science and Data Science",
     phone: "+91 98765 43210",
     image: convener1Image,
   },
   {
-    name: "Dr. Meera Patel",
-    profession: "Associate Professor",
-    email: "meera.patel@college.edu",
+    name: "Dr.K.Selvavinayaki",
+    profession: "Head of Department - Computer Applications",
     phone: "+91 98765 43211",
     image: convener2Image,
   },
@@ -46,45 +44,39 @@ const conveners = [
 
 const facultyCoordinators = [
   {
-    name: "Prof. Vikram Singh",
-    profession: "Assistant Professor - CSE",
-    email: "vikram.singh@college.edu",
-    phone: "+91 98765 43212",
+    name: "Dr. R. Anitha",
+    profession: "Assistant Professor - Computer Science and Data Science",
+    phone: "+91 9159912712",
     image: faculty1Image,
   },
   {
-    name: "Prof. Anita Reddy",
-    profession: "Assistant Professor - IT",
-    email: "anita.reddy@college.edu",
-    phone: "+91 98765 43213",
+    name: "Dr.M.Sheela New Sheeba",
+    profession: "Assistant Professor - Computer Applications",
+    phone: "+91 9965665652",
     image: faculty2Image,
   },
 ];
 
 const coordinators = [
   {
-    name: "Priya Sharma",
+    name: "Lavanya.B.P",
     role: "Student Coordinator",
-    email: "priya.sharma@college.edu",
-    phone: "+91 98765 43214",
+    phone: "+91 9361818449",
   },
   {
-    name: "Rahul Verma",
+    name: "Darshana.B",
     role: "Technical Lead",
-    email: "rahul.verma@college.edu",
-    phone: "+91 98765 43215",
+    phone: "+91 9342941778",
   },
   {
-    name: "Sneha Patel",
+    name: "Preethi Ganesh",
     role: "Event Manager",
-    email: "sneha.patel@college.edu",
-    phone: "+91 98765 43216",
+    phone: "+91 8270816214",
   },
   {
-    name: "Karthik Nair",
+    name: "Harish.K",
     role: "Volunteer Coordinator",
-    email: "karthik.nair@college.edu",
-    phone: "+91 98765 43217",
+    phone: "+91 6383341381",
   },
 ];
 
@@ -176,13 +168,9 @@ export const CoordinatorsSection = () => {
                 </h3>
                 <p className="text-primary text-sm mb-4">{member.profession}</p>
                 <div className="space-y-2 text-sm">
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="flex items-center justify-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-                  >
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
                     <Mail className="w-4 h-4" />
-                    <span className="truncate">{member.email}</span>
-                  </a>
+                  </div>
                   <a
                     href={`tel:${member.phone}`}
                     className="flex items-center justify-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -236,13 +224,9 @@ export const CoordinatorsSection = () => {
                 </h3>
                 <p className="text-primary text-sm mb-4">{member.profession}</p>
                 <div className="space-y-2 text-sm">
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="flex items-center justify-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-                  >
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
                     <Mail className="w-4 h-4" />
-                    <span className="truncate">{member.email}</span>
-                  </a>
+                  </div>
                   <a
                     href={`tel:${member.phone}`}
                     className="flex items-center justify-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -290,13 +274,9 @@ export const CoordinatorsSection = () => {
                 <p className="text-primary text-sm mb-4">{coordinator.role}</p>
 
                 <div className="space-y-2 text-sm">
-                  <a
-                    href={`mailto:${coordinator.email}`}
-                    className="flex items-center justify-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-                  >
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
                     <Mail className="w-4 h-4" />
-                    <span className="truncate">{coordinator.email}</span>
-                  </a>
+                  </div>
                   <a
                     href={`tel:${coordinator.phone}`}
                     className="flex items-center justify-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
