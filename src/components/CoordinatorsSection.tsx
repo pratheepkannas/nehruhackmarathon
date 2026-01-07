@@ -12,7 +12,7 @@ import deanImage from "@/assets/dean.png";
 const management = [
   {
     name: "Dr. Rajesh Kumar",
-    profession: "Principal",
+    profession: "CEO & Secretary",
     image: principalImage,
   },
   {
