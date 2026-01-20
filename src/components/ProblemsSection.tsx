@@ -122,59 +122,69 @@ export const ProblemsSection = () => {
         </AnimatedSection>
 
         <StaggerContainer className="grid md:grid-cols-2 gap-6">
-          {problemStatements.map((problem) => (
-            <StaggerItem key={problem.id}>
-              <motion.div
-                className="glass-card p-6 h-full group cursor-pointer overflow-hidden relative"
-                whileHover={{ scale: 1.02, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                {/* Hover gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${problem.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                
-                <div className="relative z-10">
-                  <div className="flex items-start gap-4">
-                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${problem.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                      <problem.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <span className="text-xs text-muted-foreground font-medium">
-                        Problem Statement {problem.id}
-                      </span>
-                      <h3 className="text-xl font-display font-bold text-foreground mt-1 mb-3 group-hover:text-primary transition-colors">
-                        {problem.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed text-justify">
-                        {problem.description}
-                      </p>
-                    </div>
-                  </div>
+          {problemStatements.map((problem) => {
+            const isClosed = problem.id === 4; // Healthcare domain is closed
+            
+            return (
+              <StaggerItem key={problem.id}>
+                <motion.div
+                  className={`glass-card p-6 h-full group overflow-hidden relative ${isClosed ? 'opacity-60 cursor-not-allowed' : 'cursor-pointer'}`}
+                  whileHover={isClosed ? {} : { scale: 1.02, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  {/* Hover gradient overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${problem.color} opacity-0 ${!isClosed && 'group-hover:opacity-10'} transition-opacity duration-300`} />
                   
-                  <div className="mt-4 pt-4 border-t border-border/50 flex items-center justify-between">
-                    <span className="text-xs text-muted-foreground">
-                      Open for all participants
-                    </span>
-                    {problem.detailedContent ? (
-                      <motion.button 
-                        className="text-primary text-sm font-medium"
-                        whileHover={{ x: 5 }}
-                        onClick={() => setSelectedProblem(problem)}
-                      >
-                        View more →
-                      </motion.button>
-                    ) : (
-                      <motion.span 
-                        className="text-primary text-sm font-medium"
-                        whileHover={{ x: 5 }}
-                      >
-                        View more →
-                      </motion.span>
-                    )}
+                  <div className="relative z-10">
+                    <div className="flex items-start gap-4">
+                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${problem.color} flex items-center justify-center flex-shrink-0 ${!isClosed && 'group-hover:scale-110'} transition-transform ${isClosed && 'grayscale'}`}>
+                        <problem.icon className="w-7 h-7 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <span className="text-xs text-muted-foreground font-medium">
+                          Problem Statement {problem.id}
+                        </span>
+                        <h3 className={`text-xl font-display font-bold mt-1 mb-3 transition-colors ${isClosed ? 'line-through text-muted-foreground' : 'text-foreground group-hover:text-primary'}`}>
+                          {problem.title}
+                        </h3>
+                        <p className={`text-sm leading-relaxed text-justify ${isClosed ? 'line-through text-muted-foreground/70' : 'text-muted-foreground'}`}>
+                          {problem.description}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-4 pt-4 border-t border-border/50 flex items-center justify-between">
+                      {isClosed ? (
+                        <span className="text-xs text-destructive font-semibold">
+                          Registration is closed for this domain
+                        </span>
+                      ) : (
+                        <span className="text-xs text-muted-foreground">
+                          Open for all participants
+                        </span>
+                      )}
+                      {!isClosed && problem.detailedContent ? (
+                        <motion.button 
+                          className="text-primary text-sm font-medium"
+                          whileHover={{ x: 5 }}
+                          onClick={() => setSelectedProblem(problem)}
+                        >
+                          View more →
+                        </motion.button>
+                      ) : !isClosed ? (
+                        <motion.span 
+                          className="text-primary text-sm font-medium"
+                          whileHover={{ x: 5 }}
+                        >
+                          View more →
+                        </motion.span>
+                      ) : null}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            </StaggerItem>
-          ))}
+                </motion.div>
+              </StaggerItem>
+            );
+          })}
         </StaggerContainer>
 
         {/* PPT Download Section */}
