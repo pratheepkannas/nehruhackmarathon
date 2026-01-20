@@ -49,15 +49,15 @@ const conveners = [
     image: convener2Image,
   },
   {
-    name: "Convener 3",
-    profession: "Department",
-    phone: "+91 00000 00000",
+    name: "Dr. N. Saranya",
+    profession: "Head of Department - AIML & IoT",
+    phone: "+91 9788956217",
     image: convener3Image,
   },
   {
-    name: "Convener 4",
-    profession: "Department",
-    phone: "+91 00000 00000",
+    name: "Dr. J. Maria Shyla",
+    profession: "Head of Department - Information Technology",
+    phone: "+91 9787748348",
     image: convener4Image,
   },
 ];
