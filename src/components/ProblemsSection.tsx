@@ -246,12 +246,14 @@ export const ProblemsSection = () => {
                 return (
                   <p key={i} className="text-muted-foreground mb-2">
                     <strong className="text-foreground">{label.replace(/\*\*/g, '')}:</strong>
-                    {rest.join(':')}
+                    {rest.join(':').replace(/\*\*/g, '')}
                   </p>
                 );
               }
               if (line.trim()) {
-                return <p key={i} className="text-muted-foreground mb-3">{line}</p>;
+                // Remove any remaining ** markers from text
+                const cleanLine = line.replace(/\*\*/g, '');
+                return <p key={i} className="text-muted-foreground mb-3">{cleanLine}</p>;
               }
               return null;
             })}
