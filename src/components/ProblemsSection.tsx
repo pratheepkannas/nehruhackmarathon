@@ -123,7 +123,7 @@ export const ProblemsSection = () => {
 
         <StaggerContainer className="grid md:grid-cols-2 gap-6">
           {problemStatements.map((problem) => {
-            const isClosed = problem.id === 4 || problem.id === 1; // Healthcare and Cybersecurity domains are closed
+            const isClosed = false; // All domains are open
             
             return (
               <StaggerItem key={problem.id}>
