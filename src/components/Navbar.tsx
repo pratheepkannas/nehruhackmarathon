@@ -38,25 +38,19 @@ export const Navbar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300" />
               </a>
             ))}
-            <a
-              href="https://forms.gle/2tyXXexojdF9iufT7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity animate-pulse-glow"
+            <span
+              className="px-4 py-2 rounded-lg bg-muted text-muted-foreground font-semibold text-sm cursor-not-allowed opacity-60"
             >
-              Register Now
-            </a>
+              Registration Closed
+            </span>
           </div>
 
           {/* Mobile Register Button */}
-          <a
-            href="https://forms.gle/2tyXXexojdF9iufT7"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="md:hidden px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold text-sm active:scale-95 transition-transform touch-manipulation"
+          <span
+            className="md:hidden px-4 py-2 rounded-lg bg-muted text-muted-foreground font-semibold text-sm cursor-not-allowed opacity-60"
           >
-            Register
-          </a>
+            Closed
+          </span>
         </div>
       </div>
     </motion.nav>
