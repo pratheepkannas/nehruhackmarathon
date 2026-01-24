@@ -29,13 +29,13 @@ export const AnnouncementModal = () => {
 
           {/* Modal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="fixed left-1/2 top-1/2 z-50 w-[90%] max-w-md -translate-x-1/2 -translate-y-1/2"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
           >
-            <div className="glass-card p-6 md:p-8 rounded-2xl border border-primary/30 relative overflow-hidden">
+            <div className="w-full max-w-md glass-card p-6 md:p-8 rounded-2xl border border-primary/30 relative overflow-hidden" onClick={(e) => e.stopPropagation()}>
               {/* Animated background glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none" />
               

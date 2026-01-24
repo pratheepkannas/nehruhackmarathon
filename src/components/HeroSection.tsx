@@ -2,16 +2,19 @@ import { motion } from "framer-motion";
 import { Calendar, Users, Slack } from "lucide-react";
 import { useState, useEffect } from "react";
 import nascHeader from "@/assets/nasc-header.jpeg";
-const useCountdown = (targetDate: Date) => {
+const HACKATHON_DATE = new Date("2026-02-05T09:00:00");
+
+const useCountdown = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0
   });
+  
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const difference = targetDate.getTime() - new Date().getTime();
+      const difference = HACKATHON_DATE.getTime() - new Date().getTime();
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -24,17 +27,12 @@ const useCountdown = (targetDate: Date) => {
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 1000);
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, []);
+  
   return timeLeft;
 };
 export const HeroSection = () => {
-  const hackathonDate = new Date("2026-02-05T09:00:00");
-  const {
-    days,
-    hours,
-    minutes,
-    seconds
-  } = useCountdown(hackathonDate);
+  const { days, hours, minutes, seconds } = useCountdown();
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-24 md:pb-8">
       <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
         {/* College Header Image */}
