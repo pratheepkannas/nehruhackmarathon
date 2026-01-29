@@ -11,16 +11,30 @@ import {
 } from "@/components/ui/table";
 
 const shortlistedTeams = [
-  { teamId: "TM001", teamName: "Code Crushers", collegeName: "Anna University" },
-  { teamId: "TM002", teamName: "Binary Blazers", collegeName: "VIT Chennai" },
-  { teamId: "TM003", teamName: "Tech Titans", collegeName: "SRM University" },
-  { teamId: "TM004", teamName: "Debug Dynasty", collegeName: "PSG Tech" },
-  { teamId: "TM005", teamName: "Hack Heroes", collegeName: "NIT Trichy" },
-  { teamId: "TM006", teamName: "Pixel Pioneers", collegeName: "CEG Chennai" },
-  { teamId: "TM007", teamName: "Logic Legends", collegeName: "SSN College" },
-  { teamId: "TM008", teamName: "Byte Busters", collegeName: "Amrita University" },
-  { teamId: "TM009", teamName: "Neural Ninjas", collegeName: "BITS Pilani" },
-  { teamId: "TM010", teamName: "Data Dynamos", collegeName: "IIT Madras" },
+  { teamId: "TM001", teamName: "Code Crushers", collegeName: "Anna University", domain: "AI/ML" },
+  { teamId: "TM002", teamName: "Binary Blazers", collegeName: "VIT Chennai", domain: "Web Development" },
+  { teamId: "TM003", teamName: "Tech Titans", collegeName: "SRM University", domain: "Blockchain" },
+  { teamId: "TM004", teamName: "Debug Dynasty", collegeName: "PSG Tech", domain: "IoT" },
+  { teamId: "TM005", teamName: "Hack Heroes", collegeName: "NIT Trichy", domain: "Cybersecurity" },
+  { teamId: "TM006", teamName: "Pixel Pioneers", collegeName: "CEG Chennai", domain: "AR/VR" },
+  { teamId: "TM007", teamName: "Logic Legends", collegeName: "SSN College", domain: "Cloud Computing" },
+  { teamId: "TM008", teamName: "Byte Busters", collegeName: "Amrita University", domain: "Data Science" },
+  { teamId: "TM009", teamName: "Neural Ninjas", collegeName: "BITS Pilani", domain: "AI/ML" },
+  { teamId: "TM010", teamName: "Data Dynamos", collegeName: "IIT Madras", domain: "Fintech" },
+  { teamId: "TM011", teamName: "Quantum Coders", collegeName: "IIT Bombay", domain: "Quantum Computing" },
+  { teamId: "TM012", teamName: "Cloud Surfers", collegeName: "IIIT Hyderabad", domain: "Cloud Computing" },
+  { teamId: "TM013", teamName: "Cyber Warriors", collegeName: "Manipal University", domain: "Cybersecurity" },
+  { teamId: "TM014", teamName: "AI Avengers", collegeName: "DSCE Bangalore", domain: "AI/ML" },
+  { teamId: "TM015", teamName: "Block Builders", collegeName: "Christ University", domain: "Blockchain" },
+  { teamId: "TM016", teamName: "Web Wizards", collegeName: "Loyola College", domain: "Web Development" },
+  { teamId: "TM017", teamName: "IoT Innovators", collegeName: "Madras University", domain: "IoT" },
+  { teamId: "TM018", teamName: "Data Detectives", collegeName: "Stella Maris", domain: "Data Science" },
+  { teamId: "TM019", teamName: "Virtual Vipers", collegeName: "MCC Chennai", domain: "AR/VR" },
+  { teamId: "TM020", teamName: "Fintech Force", collegeName: "Presidency College", domain: "Fintech" },
+  { teamId: "TM021", teamName: "Algo Architects", collegeName: "Ethiraj College", domain: "AI/ML" },
+  { teamId: "TM022", teamName: "Secure Squad", collegeName: "Women's Christian", domain: "Cybersecurity" },
+  { teamId: "TM023", teamName: "Smart Solvers", collegeName: "Sathyabama Univ", domain: "IoT" },
+  { teamId: "TM024", teamName: "Code Catalysts", collegeName: "Hindustan Univ", domain: "Web Development" },
 ];
 
 export const AnnouncementModal = () => {
@@ -139,6 +153,7 @@ export const AnnouncementModal = () => {
                             <TableHead className="text-foreground font-display font-semibold">Team ID</TableHead>
                             <TableHead className="text-foreground font-display font-semibold">Team Name</TableHead>
                             <TableHead className="text-foreground font-display font-semibold">College Name</TableHead>
+                            <TableHead className="text-foreground font-display font-semibold">Domain</TableHead>
                           </TableRow>
                         </TableHeader>
                         <TableBody>
@@ -157,6 +172,9 @@ export const AnnouncementModal = () => {
                               </TableCell>
                               <TableCell className="text-muted-foreground">
                                 {team.collegeName}
+                              </TableCell>
+                              <TableCell className="text-muted-foreground">
+                                {team.domain}
                               </TableCell>
                             </TableRow>
                           ))}
