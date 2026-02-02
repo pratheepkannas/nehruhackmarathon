@@ -18,6 +18,7 @@ const shortlistedTeams = [
   { teamId: "TF004", teamName: "Necromancers", collegeName: "Rathinam Groups Of Institution", domain: "Fintech and Digital Economy" },
   { teamId: "TF005", teamName: "Mad Squad", collegeName: "Nehru Institute of Technology", domain: "Fintech and Digital Economy" },
   { teamId: "TF006", teamName: "Stranger Tech", collegeName: "KG College Of Arts and Science", domain: "Fintech and Digital Economy" },
+  { teamId: "TF007", teamName: "Enter To Execute", collegeName: "Sri Ramakrishna College of Arts & Science", domain: "Fintech and Digital Economy" },
   { teamId: "TNL07", teamName: "Weekend Coders", collegeName: "KG College Of Arts and Science", domain: "NLP" },
   { teamId: "TNL08", teamName: "MindGuard", collegeName: "Dr.NGP Arts and Science College", domain: "NLP" },
   { teamId: "TNL09", teamName: "Upstream", collegeName: "Dr.NGP Arts and Science College", domain: "NLP" },
